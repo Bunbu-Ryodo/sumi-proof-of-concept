@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, TextInput, Button, View, StyleSheet } from "react-native";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
@@ -7,8 +7,8 @@ SplashScreen.preventAutoHideAsync();
 
 export default function Index() {
   const [loaded, error] = useFonts({
-    GoudyBookletter: require("../../assets/fonts/GoudyBookletter1911-Regular.ttf"),
-    QuicksandReg: require("../../assets/fonts/Quicksand-Regular.ttf"),
+    GoudyBookletter: require("../assets/fonts/GoudyBookletter1911-Regular.ttf"),
+    QuicksandReg: require("../assets/fonts/Quicksand-Regular.ttf"),
   });
 
   useEffect(() => {
@@ -26,7 +26,13 @@ export default function Index() {
         <View style={styles.logoTitle}></View>
       </View>
       <Text style={styles.header}>Sumi</Text>
-      <Text style={styles.text}>Just One More Chapter</Text>
+      <Text style={styles.tagline}>Just One More Chapter</Text>
+      <View style={styles.form}>
+        <Text style={styles.formLabel}>Email</Text>
+        <TextInput style={styles.formInput}></TextInput>
+        <Text style={styles.formLabel}>Password</Text>
+        <TextInput style={styles.formInput}></TextInput>
+      </View>
     </View>
   );
 }
@@ -37,6 +43,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#393E41",
+    width: "100%",
   },
   logoBook: {
     width: 50,
@@ -56,9 +63,28 @@ const styles = StyleSheet.create({
     fontFamily: "GoudyBookletter",
     color: "#F6F7EB",
   },
-  text: {
-    fontSize: 12,
+  tagline: {
+    fontSize: 18,
     fontFamily: "QuicksandReg",
     color: "#F6F7EB",
+  },
+  form: {
+    width: "80%",
+  },
+  formLabel: {
+    marginTop: 8,
+    fontSize: 16,
+    fontFamily: "QuicksandReg",
+    color: "#F6F7EB",
+  },
+  formInput: {
+    marginTop: 12,
+    fontSize: 16,
+    fontFamily: "QuicksandReg",
+    color: "#F6F7EB",
+    borderRadius: 2,
+    borderWidth: 1,
+    borderColor: "#F6F7EB",
+    padding: 12,
   },
 });
