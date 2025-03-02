@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from "react-native";
+import { Link } from "expo-router";
 
 export default function Index() {
   return (
@@ -20,12 +21,16 @@ export default function Index() {
         <TextInput style={styles.formInput}></TextInput>
         <Text style={styles.formLabel}>Password</Text>
         <TextInput secureTextEntry={true} style={styles.formInput}></TextInput>
-        <TouchableOpacity style={styles.buttonPrimary} onPress={() => {}}>
-          <Text style={styles.primaryButtonText}>Sign In</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonSecondary} onPress={() => {}}>
-          <Text style={styles.secondaryButtonText}>Register</Text>
-        </TouchableOpacity>
+        <Link href="/feed">
+          <TouchableOpacity style={styles.buttonPrimary} onPress={() => {}}>
+            <Text style={styles.primaryButtonText}>Sign In</Text>
+          </TouchableOpacity>
+        </Link>
+        <Link href="/register">
+          <TouchableOpacity style={styles.buttonSecondary} onPress={() => {}}>
+            <Text style={styles.secondaryButtonText}>Register</Text>
+          </TouchableOpacity>
+        </Link>
       </View>
     </View>
   );
@@ -94,6 +99,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: "center",
     fontFamily: "QuicksandReg",
+    width: "100%",
   },
   primaryButtonText: {
     color: "#393E41",
@@ -113,5 +119,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: "center",
     fontFamily: "QuicksandReg",
+    width: "100%",
   },
 });

@@ -7,6 +7,8 @@ export default function RootLayout() {
   const [loaded, error] = useFonts({
     GoudyBookletter: require("../assets/fonts/GoudyBookletter1911-Regular.ttf"),
     QuicksandReg: require("../assets/fonts/Quicksand-Regular.ttf"),
+    Merriweather: require("../assets/fonts/Merriweather-Regular.ttf"),
+    MerriweatherSans: require("../assets/fonts/MerriweatherSans-VariableFont_wght.ttf"),
   });
 
   useEffect(() => {
