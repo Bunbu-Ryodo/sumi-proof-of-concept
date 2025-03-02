@@ -1,25 +1,13 @@
-import { Text, TextInput, Button, View, StyleSheet } from "react-native";
-import { useFonts } from "expo-font";
-import * as SplashScreen from "expo-splash-screen";
-import { useEffect } from "react";
-
-SplashScreen.preventAutoHideAsync();
+import {
+  Text,
+  TextInput,
+  Button,
+  View,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 
 export default function Index() {
-  const [loaded, error] = useFonts({
-    GoudyBookletter: require("../assets/fonts/GoudyBookletter1911-Regular.ttf"),
-    QuicksandReg: require("../assets/fonts/Quicksand-Regular.ttf"),
-  });
-
-  useEffect(() => {
-    if (loaded || error) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded, error]);
-
-  if (!loaded && !error) {
-    return null;
-  }
   return (
     <View style={styles.container}>
       <View style={styles.logoBook}>
@@ -31,7 +19,13 @@ export default function Index() {
         <Text style={styles.formLabel}>Email</Text>
         <TextInput style={styles.formInput}></TextInput>
         <Text style={styles.formLabel}>Password</Text>
-        <TextInput style={styles.formInput}></TextInput>
+        <TextInput secureTextEntry={true} style={styles.formInput}></TextInput>
+        <TouchableOpacity style={styles.buttonPrimary} onPress={() => {}}>
+          <Text style={styles.primaryButtonText}>Sign In</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.buttonSecondary} onPress={() => {}}>
+          <Text style={styles.secondaryButtonText}>Register</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -69,7 +63,7 @@ const styles = StyleSheet.create({
     color: "#F6F7EB",
   },
   form: {
-    width: "80%",
+    width: "90%",
   },
   formLabel: {
     marginTop: 8,
@@ -82,9 +76,42 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: "QuicksandReg",
     color: "#F6F7EB",
-    borderRadius: 2,
+    borderRadius: 8,
     borderWidth: 1,
     borderColor: "#F6F7EB",
     padding: 12,
+    backgroundColor: "transparent",
+  },
+  signIn: {
+    marginTop: 14,
+    backgroundColor: "#F6F7EB",
+    borderRadius: 8,
+  },
+  buttonPrimary: {
+    marginTop: 14,
+    padding: 16,
+    backgroundColor: "#F6F7EB",
+    borderRadius: 8,
+    alignItems: "center",
+    fontFamily: "QuicksandReg",
+  },
+  primaryButtonText: {
+    color: "#393E41",
+    fontFamily: "QuicksandReg",
+  },
+  secondaryButtonText: {
+    color: "#F6F7EB",
+    fontFamily: "QuicksandReg",
+  },
+  buttonSecondary: {
+    marginTop: 12,
+    padding: 12,
+    backgroundColor: "transparent",
+    borderWidth: 1,
+    borderColor: "#F6F7EB",
+    color: "#F6F7EB",
+    borderRadius: 8,
+    alignItems: "center",
+    fontFamily: "QuicksandReg",
   },
 });
