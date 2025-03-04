@@ -1,4 +1,5 @@
-import { Text, View, StyleSheet, ScrollView } from "react-native";
+import { View, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
+import { Link } from "expo-router";
 import Extract from "../components/extract";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
@@ -9,9 +10,17 @@ export default function FeedScreen() {
       style={styles.container}
     >
       <View style={styles.headerBar}>
-        <Ionicons name="trophy" size={24} color="#F6F7EB" />
-        <Ionicons name="bookmark" size={24} color="#F6F7EB" />
-        <Ionicons name="settings" size={24} color="#F6F7EB" />
+        <TouchableOpacity>
+          <Ionicons name="trophy" size={24} color="#F6F7EB" />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Ionicons name="bookmark" size={24} color="#F6F7EB" />
+        </TouchableOpacity>
+        <Link href="/settings" asChild>
+          <TouchableOpacity>
+            <Ionicons name="settings" size={24} color="#F6F7EB" />
+          </TouchableOpacity>
+        </Link>
       </View>
       <Extract
         title={"Kim"}

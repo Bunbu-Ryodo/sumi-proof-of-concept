@@ -2,7 +2,6 @@ import {
   Text,
   TextInput,
   Button,
-  Pressable,
   View,
   StyleSheet,
   TouchableOpacity,
@@ -22,14 +21,12 @@ export default function Index() {
         <TextInput style={styles.formInput}></TextInput>
         <Text style={styles.formLabel}>Password</Text>
         <TextInput secureTextEntry={true} style={styles.formInput}></TextInput>
-
-        <Link style={styles.buttonContainer} href="/feed" asChild>
+        <Link href="/feed">
           <TouchableOpacity style={styles.buttonPrimary} onPress={() => {}}>
             <Text style={styles.primaryButtonText}>Sign In</Text>
           </TouchableOpacity>
         </Link>
-
-        <Link style={styles.buttonContainer} href="/register" asChild>
+        <Link href="/register">
           <TouchableOpacity style={styles.buttonSecondary} onPress={() => {}}>
             <Text style={styles.secondaryButtonText}>Register</Text>
           </TouchableOpacity>
@@ -95,35 +92,33 @@ const styles = StyleSheet.create({
     backgroundColor: "#F6F7EB",
     borderRadius: 8,
   },
-  buttonContainer: {
-    width: "100%",
-    alignItems: "center",
-    marginTop: 12,
-  },
   buttonPrimary: {
-    paddingVertical: 16,
+    marginTop: 14,
+    padding: 16,
     backgroundColor: "#F6F7EB",
-    borderRadius: 8, // Same borderRadius as form inputs
+    borderRadius: 8,
     alignItems: "center",
-    width: "100%", // Take 100% of the container width
+    fontFamily: "QuicksandReg",
+    width: "100%",
   },
   primaryButtonText: {
     color: "#393E41",
     fontFamily: "QuicksandReg",
-    fontSize: 16,
-  },
-  buttonSecondary: {
-    paddingVertical: 16,
-    backgroundColor: "transparent",
-    borderWidth: 1,
-    borderColor: "#F6F7EB",
-    borderRadius: 8, // Same borderRadius as form inputs
-    alignItems: "center",
-    width: "100%", // Take 100% of the container width
   },
   secondaryButtonText: {
     color: "#F6F7EB",
     fontFamily: "QuicksandReg",
-    fontSize: 16,
+  },
+  buttonSecondary: {
+    marginTop: 12,
+    padding: 12,
+    backgroundColor: "transparent",
+    borderWidth: 1,
+    borderColor: "#F6F7EB",
+    color: "#F6F7EB",
+    borderRadius: 8,
+    alignItems: "center",
+    fontFamily: "QuicksandReg",
+    width: "100%",
   },
 });
