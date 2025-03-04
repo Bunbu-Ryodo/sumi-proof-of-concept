@@ -17,34 +17,86 @@ export default function Achievements() {
         <View style={styles.completedAchievementsContainer}>
           <View style={styles.achievementsRow}>
             <View style={styles.achievementIcon}></View>
-            <View>
+            <View style={styles.achievementDetails}>
               <Text style={styles.achievementTitle}>Bookworm</Text>
               <Text style={styles.achievementDescription}>
                 Read everyday for a week
               </Text>
-              <View style={styles.achievementProgressBar}>
-                <Text>7/7</Text>
+              <View style={styles.achievementProgressBar}></View>
+            </View>
+            <View style={styles.scoreContainer}>
+              <Text style={styles.score}>+100</Text>
+            </View>
+          </View>
+          <View style={styles.achievementsRow}>
+            <View style={styles.achievementIcon}></View>
+            <View style={styles.achievementDetails}>
+              <Text style={styles.achievementTitle}>Magpie</Text>
+              <Text style={styles.achievementDescription}>Save 3 extracts</Text>
+              <View style={styles.achievementProgressBar}></View>
+            </View>
+            <View style={styles.scoreContainer}>
+              <Text style={styles.score}>+50</Text>
+            </View>
+          </View>
+          <View style={styles.achievementsRow}>
+            <View style={styles.achievementIcon}></View>
+            <View style={styles.achievementDetails}>
+              <Text style={styles.achievementTitle}>Man of Letters</Text>
+              <Text style={styles.achievementDescription}>
+                Post a comment that gets upvoted 10 times
+              </Text>
+              <View style={styles.achievementProgressBar}></View>
+            </View>
+            <View style={styles.scoreContainer}>
+              <Text style={styles.score}>+150</Text>
+            </View>
+          </View>
+        </View>
+        <Text style={styles.inProgressAchievementsHeader}>In Progress</Text>
+        <View style={styles.inProgressAchievementsContainer}>
+          <View style={styles.achievementsRow}>
+            <View style={styles.inProgressIcon}></View>
+            <View style={styles.achievementDetails}>
+              <Text style={styles.achievementTitle}>Bookworm</Text>
+              <Text style={styles.achievementDescription}>
+                Read everyday for a week
+              </Text>
+              <View style={styles.inProgressBar}>
+                <View style={styles.progress1}></View>
               </View>
             </View>
-            <View></View>
-          </View>
-          <View>
-            <View></View>
-            <View>
-              <Text></Text>
-              <Text></Text>
-              <View></View>
+            <View style={styles.scoreContainer}>
+              <Text style={styles.score}>+100</Text>
             </View>
-            <View></View>
           </View>
-          <View>
-            <View></View>
-            <View>
-              <Text></Text>
-              <Text></Text>
-              <View></View>
+          <View style={styles.achievementsRow}>
+            <View style={styles.inProgressIcon}></View>
+            <View style={styles.achievementDetails}>
+              <Text style={styles.achievementTitle}>Magpie</Text>
+              <Text style={styles.achievementDescription}>Save 3 extracts</Text>
+              <View style={styles.inProgressBar}>
+                <View style={styles.progress2}></View>
+              </View>
             </View>
-            <View></View>
+            <View style={styles.scoreContainer}>
+              <Text style={styles.score}>+50</Text>
+            </View>
+          </View>
+          <View style={styles.achievementsRow}>
+            <View style={styles.inProgressIcon}></View>
+            <View style={styles.achievementDetails}>
+              <Text style={styles.achievementTitle}>Man of Letters</Text>
+              <Text style={styles.achievementDescription}>
+                Post a comment that gets upvoted 10 times
+              </Text>
+              <View style={styles.inProgressBar}>
+                <View style={styles.progress3}></View>
+              </View>
+            </View>
+            <View style={styles.scoreContainer}>
+              <Text style={styles.score}>+150</Text>
+            </View>
           </View>
         </View>
       </View>
@@ -91,16 +143,36 @@ const styles = StyleSheet.create({
     fontFamily: "QuicksandReg",
     fontSize: 14,
   },
+  inProgressAchievementsHeader: {
+    marginTop: 16,
+    textDecorationLine: "underline",
+    fontFamily: "QuicksandReg",
+    fontSize: 14,
+  },
   completedAchievementsContainer: {
     marginTop: 12,
     width: "90%",
+    maxWidth: 368,
     borderWidth: 1,
     borderColor: "#393E41",
     borderRadius: 8,
     padding: 16,
   },
+  inProgressAchievementsContainer: {
+    marginTop: 12,
+    width: "90%",
+    maxWidth: 368,
+    borderWidth: 1,
+    borderColor: "#393E41",
+    borderRadius: 8,
+    padding: 16,
+  },
+  achievementDetails: {
+    minWidth: 200,
+  },
   achievementsRow: {
     flexDirection: "row",
+    marginBottom: 16,
   },
   achievementIcon: {
     height: 48,
@@ -108,5 +180,68 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     backgroundColor: "#393E41",
     marginRight: 16,
+  },
+  inProgressIcon: {
+    height: 48,
+    width: 48,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "#393E41",
+    marginRight: 16,
+  },
+  achievementTitle: {
+    fontFamily: "QuicksandReg",
+    fontSize: 16,
+  },
+  achievementDescription: {
+    marginTop: 4,
+    fontFamily: "QuicksandReg",
+    maxWidth: 200,
+    fontSize: 14,
+  },
+  achievementProgressBar: {
+    marginTop: 8,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#FE7F2D",
+    borderRadius: 40,
+    height: 14,
+  },
+  inProgressBar: {
+    marginTop: 8,
+    borderWidth: 1,
+    borderColor: "#393E41",
+    borderRadius: 40,
+    height: 14,
+  },
+  progress1: {
+    height: "100%",
+    width: 100,
+    backgroundColor: "#8980F5",
+    borderRadius: 40,
+  },
+  progress2: {
+    height: "100%",
+    width: 150,
+    backgroundColor: "#8980F5",
+    borderRadius: 40,
+  },
+  progress3: {
+    height: "100%",
+    width: 175,
+    backgroundColor: "#8980F5",
+    borderRadius: 40,
+  },
+  achievementStepCount: {
+    fontFamily: "QuicksandReg",
+  },
+  scoreContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 16,
+  },
+  score: {
+    fontSize: 24,
+    fontFamily: "GoudyBookletter",
   },
 });
