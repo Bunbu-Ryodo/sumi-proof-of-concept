@@ -7,32 +7,42 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { Link } from "expo-router";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
-export default function Register() {
+export default function Settings() {
   return (
     <View style={styles.container}>
-      <View style={styles.logoBook}>
-        <View style={styles.logoTitle}></View>
+      <View style={styles.headerBar}>
+        <Link href="/feed" asChild>
+          <TouchableOpacity>
+            <Ionicons name="newspaper-sharp" size={24} color="#F6F7EB" />
+          </TouchableOpacity>
+        </Link>
+        <TouchableOpacity>
+          <Ionicons name="trophy" size={24} color="#F6F7EB" />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Ionicons name="bookmark" size={24} color="#F6F7EB" />
+        </TouchableOpacity>
+        <Link href="/settings" asChild>
+          <TouchableOpacity>
+            <Ionicons name="settings" size={24} color="#F6F7EB" />
+          </TouchableOpacity>
+        </Link>
       </View>
-      <Text style={styles.header}>Sumi</Text>
-      <Text style={styles.tagline}>Just One More Chapter</Text>
+      <Text style={styles.header}>Account Settings</Text>
       <View style={styles.form}>
         <Text style={styles.formLabel}>ReaderTag</Text>
         <TextInput style={styles.formInput}></TextInput>
-        <Text style={styles.formLabel}>Email</Text>
+        <Text style={styles.formLabel}>Change Email</Text>
         <TextInput style={styles.formInput}></TextInput>
-        <Text style={styles.formLabel}>Create Password</Text>
+        <Text style={styles.formLabel}>Change Password</Text>
         <TextInput secureTextEntry={true} style={styles.formInput}></TextInput>
-        <Text style={styles.formLabel}>Confirm Password</Text>
+        <Text style={styles.formLabel}>Confirm New Password</Text>
         <TextInput secureTextEntry={true} style={styles.formInput}></TextInput>
         <Link style={styles.buttonContainer} href="/feed" asChild>
           <TouchableOpacity style={styles.buttonPrimary} onPress={() => {}}>
-            <Text style={styles.primaryButtonText}>Register</Text>
-          </TouchableOpacity>
-        </Link>
-        <Link style={styles.buttonContainer} href="/" asChild>
-          <TouchableOpacity style={styles.buttonSecondary} onPress={() => {}}>
-            <Text style={styles.secondaryButtonText}>Back to Sign In</Text>
+            <Text style={styles.primaryButtonText}>Save</Text>
           </TouchableOpacity>
         </Link>
       </View>
@@ -43,10 +53,16 @@ export default function Register() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
     backgroundColor: "#393E41",
     width: "100%",
+    alignItems: "center",
+  },
+  headerBar: {
+    marginTop: 16,
+    padding: 12,
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "flex-end",
   },
   logoBook: {
     width: 50,
