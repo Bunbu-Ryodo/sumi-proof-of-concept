@@ -12,27 +12,8 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 export default function Settings() {
   return (
     <View style={styles.container}>
-      <View style={styles.headerBar}>
-        <Link href="/feed" asChild>
-          <TouchableOpacity>
-            <Ionicons name="newspaper-sharp" size={24} color="#F6F7EB" />
-          </TouchableOpacity>
-        </Link>
-        <TouchableOpacity>
-          <Ionicons name="trophy" size={24} color="#F6F7EB" />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Ionicons name="bookmark" size={24} color="#F6F7EB" />
-        </TouchableOpacity>
-        <Link href="/settings" asChild>
-          <TouchableOpacity>
-            <Ionicons name="settings" size={24} color="#F6F7EB" />
-          </TouchableOpacity>
-        </Link>
-      </View>
-      <Text style={styles.header}>Account Settings</Text>
       <View style={styles.form}>
-        <Text style={styles.formLabel}>ReaderTag</Text>
+        <Text style={styles.formLabel}>Change ReaderTag</Text>
         <TextInput style={styles.formInput}></TextInput>
         <Text style={styles.formLabel}>Change Email</Text>
         <TextInput style={styles.formInput}></TextInput>
@@ -56,6 +37,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#393E41",
     width: "100%",
     alignItems: "center",
+    justifyContent: "center",
   },
   headerBar: {
     marginTop: 16,
