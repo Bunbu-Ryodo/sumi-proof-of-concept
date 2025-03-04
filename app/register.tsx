@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Link } from "expo-router";
 
 export default function Index() {
@@ -25,12 +26,12 @@ export default function Index() {
         <TextInput secureTextEntry={true} style={styles.formInput}></TextInput>
         <Text style={styles.formLabel}>Confirm Password</Text>
         <TextInput secureTextEntry={true} style={styles.formInput}></TextInput>
-        <Link href="/feed">
+        <Link style={styles.buttonContainer} href="/feed" asChild>
           <TouchableOpacity style={styles.buttonPrimary} onPress={() => {}}>
             <Text style={styles.primaryButtonText}>Register</Text>
           </TouchableOpacity>
         </Link>
-        <Link href="/">
+        <Link style={styles.buttonContainer} href="/" asChild>
           <TouchableOpacity style={styles.buttonSecondary} onPress={() => {}}>
             <Text style={styles.secondaryButtonText}>Back to Sign In</Text>
           </TouchableOpacity>
@@ -96,33 +97,35 @@ const styles = StyleSheet.create({
     backgroundColor: "#F6F7EB",
     borderRadius: 8,
   },
-  buttonPrimary: {
-    marginTop: 16,
-    padding: 12,
-    backgroundColor: "#F6F7EB",
-    borderRadius: 8,
-    alignItems: "center",
-    fontFamily: "QuicksandReg",
+  buttonContainer: {
     width: "100%",
+    alignItems: "center",
+    marginTop: 12,
+  },
+  buttonPrimary: {
+    paddingVertical: 16,
+    backgroundColor: "#F6F7EB",
+    borderRadius: 8, // Same borderRadius as form inputs
+    alignItems: "center",
+    width: "100%", // Take 100% of the container width
   },
   primaryButtonText: {
     color: "#393E41",
     fontFamily: "QuicksandReg",
+    fontSize: 16,
+  },
+  buttonSecondary: {
+    paddingVertical: 16,
+    backgroundColor: "transparent",
+    borderWidth: 1,
+    borderColor: "#F6F7EB",
+    borderRadius: 8, // Same borderRadius as form inputs
+    alignItems: "center",
+    width: "100%", // Take 100% of the container width
   },
   secondaryButtonText: {
     color: "#F6F7EB",
     fontFamily: "QuicksandReg",
-  },
-  buttonSecondary: {
-    marginTop: 12,
-    padding: 12,
-    backgroundColor: "transparent",
-    borderWidth: 1,
-    borderColor: "#F6F7EB",
-    color: "#F6F7EB",
-    borderRadius: 8,
-    alignItems: "center",
-    fontFamily: "QuicksandReg",
-    width: "100%",
+    fontSize: 16,
   },
 });

@@ -16,6 +16,8 @@ export default function FeedScreen() {
       <Extract
         title={"Kim"}
         author={"Rudyard Kipling"}
+        chapter={"Chapter 1"}
+        frequency={"New Installment in 1 day(s)"}
         year={"(1901)"}
         portrait={require("../assets/images/kipling.png")}
         thumbnail={require("../assets/images/Kim.png")}
@@ -23,11 +25,13 @@ export default function FeedScreen() {
           gentle when “the heathen” pray / To Buddha at Kamakura! He sat, in
           defiance of municipal orders, astride the gun Zam Zammah on her brick
           platform opposite the old Ajaib-Gher—the Wonder House, as the natives
-          call the Lahore Museum. Who hold Zam-Zammah..."
+          call the Lahore Museum. Who hold Zam-Zammah, that “fire-breathing dragon”, hold the Punjab, for the great green-bronze piece is always first of the conqueror’s loot. There was some justification for Kim—he had kicked Lala Dinanath’s boy off the trunnions—since the English held the Punjab and Kim was English... "
       ></Extract>
       <Extract
         title={"The Golden Bowl"}
         author={"Henry James"}
+        chapter={"Chapter 1"}
+        frequency={"New Installment in 3 day(s)"}
         year={"(1904)"}
         portrait={require("../assets/images/james.jpg")}
         thumbnail={require("../assets/images/goldenbowl.png")}
@@ -36,10 +40,12 @@ export default function FeedScreen() {
       <Extract
         title={"Victory"}
         author={"Joseph Conrad"}
+        chapter={"Chapter 1"}
+        frequency={"New Installment in 6 day(s)"}
         year={"(1915)"}
         portrait={require("../assets/images/conrad.jpg")}
         thumbnail={require("../assets/images/Victory.png")}
-        text="There is, as every schoolboy knows in this scientific age, a very close chemical relation between coal and diamonds. It is the reason, I believe, why some people allude to coal as “black diamonds.” Both these commodities represent wealth; but coal is a much less portable form of property. There is, from that point of view, a deplorable lack of concentration in coal. Now, if a coal-mine could be put into one's waistcoat pocket—but it can't! At the same time, there is a fascination in coal, the supreme commodity of the age in which we are camped like bewildered travellers in a garish, unrestful hotel. And I suppose those two considerations, the practical and the mystical, prevented Heyst—Axel Heyst—from going away."
+        text="There is, as every schoolboy knows in this scientific age, a very close chemical relation between coal and diamonds. It is the reason, I believe, why some people allude to coal as “black diamonds.” Both these commodities represent wealth; but coal is a much less portable form of property. There is, from that point of view, a deplorable lack of concentration in coal. Now, if a coal-mine could be put into one's waistcoat pocket—but it can't! At the same time, there is a fascination in coal, the supreme commodity of the age in which we are camped like bewildered travellers in a garish, unrestful hotel. And I suppose those two considerations, the practical and the mystical, prevented Heyst—Axel Heyst—from going away..."
       ></Extract>
     </ScrollView>
   );
