@@ -1,7 +1,9 @@
 import { Text, View, StyleSheet, Image } from "react-native";
+import { Link } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 type ExtractProps = {
+  id: number;
   title: string;
   author: string;
   chapter: string;
@@ -10,9 +12,12 @@ type ExtractProps = {
   text: string;
   portrait: any;
   thumbnail: any;
+  fullExtract: string;
+  affiliateLink: string;
 };
 
 export default function Extract({
+  id,
   title,
   author,
   chapter,
@@ -21,24 +26,67 @@ export default function Extract({
   text,
   portrait,
   thumbnail,
+  fullExtract,
+  affiliateLink,
 }: ExtractProps) {
   return (
     <View style={styles.extract}>
       <View style={styles.header}>
-        <Image source={portrait} style={styles.portrait}></Image>
+        <Link
+          href={{
+            pathname: "/ereader/[id]",
+            params: {
+              id: id,
+            },
+          }}
+          asChild
+        >
+          <Image source={portrait} style={styles.portrait}></Image>
+        </Link>
         <View>
           <Text style={styles.headerTextTitle}>{title}</Text>
           <Text style={styles.headerText}>{chapter}</Text>
           <Text style={styles.headerText}>{author}</Text>
           <Text style={styles.headerText}>{year}</Text>
           <Text style={styles.headerTextFrequency}>{frequency}</Text>
+          <Link
+            href={{
+              pathname: "/ereader/[id]",
+              params: {
+                id: id,
+              },
+            }}
+            asChild
+          >
+            <Text style={styles.readFullText}>Read full installment</Text>
+          </Link>
         </View>
       </View>
       <View style={styles.previewText}>
-        <Text style={styles.text}>{text}</Text>
+        <Link
+          href={{
+            pathname: "/ereader/[id]",
+            params: {
+              id: id,
+            },
+          }}
+          asChild
+        >
+          <Text style={styles.text}>{text}</Text>
+        </Link>
       </View>
       <View style={styles.thumbnail}>
-        <Image source={thumbnail} style={styles.thumbnail} />
+        <Link
+          href={{
+            pathname: "/ereader/[id]",
+            params: {
+              id: id,
+            },
+          }}
+          asChild
+        >
+          <Image source={thumbnail} style={styles.thumbnail} />
+        </Link>
       </View>
       <View style={styles.engagementButtons}>
         <Ionicons name="heart-outline" size={24} color="#D64045" />
@@ -119,5 +167,12 @@ const styles = StyleSheet.create({
   },
   subscribe: {
     flexDirection: "row",
+  },
+  readFullText: {
+    fontFamily: "Merriweather",
+    fontSize: 14,
+    color: "#8980F5",
+    textDecorationLine: "underline",
+    marginLeft: 12,
   },
 });

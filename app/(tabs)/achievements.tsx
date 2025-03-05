@@ -1,9 +1,12 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, ScrollView } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default function Achievements() {
   return (
-    <View style={styles.container}>
+    <ScrollView
+      contentContainerStyle={styles.contentContainer}
+      style={styles.container}
+    >
       <View style={styles.paper}>
         <View style={styles.banner}>
           <Text style={styles.brandText}>Sumi</Text>
@@ -107,15 +110,18 @@ export default function Achievements() {
           </View>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  contentContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100%",
+  },
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
     backgroundColor: "#393E41",
     width: "100%",
   },
