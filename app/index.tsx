@@ -21,12 +21,12 @@ export default function Index() {
         <TextInput style={styles.formInput}></TextInput>
         <Text style={styles.formLabel}>Password</Text>
         <TextInput secureTextEntry={true} style={styles.formInput}></TextInput>
-        <Link href="/feed">
+        <Link href="/feed" asChild>
           <TouchableOpacity style={styles.buttonPrimary} onPress={() => {}}>
             <Text style={styles.primaryButtonText}>Sign In</Text>
           </TouchableOpacity>
         </Link>
-        <Link href="/register">
+        <Link href="/register" asChild>
           <TouchableOpacity style={styles.buttonSecondary} onPress={() => {}}>
             <Text style={styles.secondaryButtonText}>Register</Text>
           </TouchableOpacity>
