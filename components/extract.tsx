@@ -48,7 +48,6 @@ export default function Extract({
           <Text style={styles.headerText}>{chapter}</Text>
           <Text style={styles.headerText}>{author}</Text>
           <Text style={styles.headerText}>{year}</Text>
-          <Text style={styles.headerTextFrequency}>{frequency}</Text>
           <Link
             href={{
               pathname: "/ereader/[id]",
@@ -171,7 +170,7 @@ const styles = StyleSheet.create({
   readFullText: {
     fontFamily: "Merriweather",
     fontSize: 14,
-    color: "#8980F5",
+    color: "#393E41",
     textDecorationLine: "underline",
     marginLeft: 12,
   },

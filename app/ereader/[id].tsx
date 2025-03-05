@@ -1,5 +1,13 @@
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import ereaderData from "../../dummy_data/ereader.js";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 import { useLocalSearchParams } from "expo-router";
 
@@ -19,13 +27,40 @@ export default function EReader() {
           <View>
             <View style={styles.titleBar}>
               <Text style={styles.title}>{textObject.title}</Text>
-              <Text style={styles.title}>{textObject.chapter}</Text>
+              <Text style={styles.chapter}>{textObject.chapter}</Text>
             </View>
             <Text style={styles.extractText}>{textObject.fullExtract}</Text>
           </View>
         ) : (
-          <Text>Something Wrong</Text>
+          <Text>Your book is in another castle</Text>
         )}
+        <View style={styles.engagementButtons}>
+          <Ionicons name="heart-outline" size={24} color="#D64045" />
+          <View style={styles.subscribeContainer}>
+            <Ionicons name="bookmark-outline" size={24} color="#FE7F2D" />
+            <Text style={styles.bookmarkText}>
+              Subscribe: new chapter next week
+            </Text>
+          </View>
+          <View style={styles.shoppingContainer}>
+            <Ionicons name="cart-outline" size={24} color="#77966D" />
+            <Text style={styles.shoppingText}>
+              Buy a high quality edition of the full text
+            </Text>
+          </View>
+          <Ionicons name="share-social-outline" size={24} color="#8980F5" />
+        </View>
+        <Text style={styles.discuss}>Discuss.</Text>
+        <TextInput
+          editable
+          multiline
+          numberOfLines={8}
+          maxLength={40}
+          style={styles.addCommentTextarea}
+        />
+        <TouchableOpacity style={styles.submitCommentButton} onPress={() => {}}>
+          <Text style={styles.submitCommentText}>Comment</Text>
+        </TouchableOpacity>
       </ScrollView>
     </ScrollView>
   );
@@ -45,7 +80,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   title: {
+    fontFamily: "GoudyBookletter",
+    fontSize: 24,
+    marginBottom: 16,
+  },
+  chapter: {
     fontFamily: "Merriweather",
+    fontSize: 18,
     marginBottom: 16,
   },
   paper: {
@@ -56,5 +97,56 @@ const styles = StyleSheet.create({
   },
   extractText: {
     fontFamily: "Merriweather",
+    borderBottomWidth: 1,
+    borderColor: "#393E41",
+    paddingBottom: 16,
+    borderStyle: "dotted",
+  },
+  engagementButtons: {
+    marginTop: 16,
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "flex-start",
+  },
+  subscribeContainer: {
+    alignItems: "center",
+    maxWidth: 120,
+  },
+  shoppingContainer: {
+    alignItems: "center",
+    maxWidth: 120,
+  },
+  bookmarkText: {
+    textAlign: "center",
+    fontFamily: "QuicksandReg",
+  },
+  shoppingText: {
+    textAlign: "center",
+    fontFamily: "QuicksandReg",
+  },
+  discuss: {
+    fontFamily: "GoudyBookletter",
+    fontSize: 36,
+  },
+  addCommentTextarea: {
+    borderWidth: 1,
+    borderColor: "#393E41",
+    padding: 8,
+    borderRadius: 8,
+    fontFamily: "QuicksandReg",
+  },
+  submitCommentButton: {
+    marginTop: 12,
+    paddingVertical: 16,
+    backgroundColor: "#393E41",
+    borderRadius: 8, // Same borderRadius as form inputs
+    alignItems: "center",
+    width: "100%", // Take 100% of the container width
+  },
+  submitCommentText: {
+    color: "#F6F7EB",
+    fontFamily: "QuicksandReg",
+    fontSize: 16,
   },
 });
