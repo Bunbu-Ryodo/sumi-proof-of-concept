@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
   },
   form: {
     width: "90%",
+    maxWidth: 368,
   },
   formLabel: {
     marginTop: 8,

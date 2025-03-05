@@ -1,127 +1,131 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, ScrollView } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default function Achievements() {
   return (
-    <View style={styles.container}>
-      <View style={styles.paper}>
-        <View style={styles.banner}>
-          <Text style={styles.brandText}>Sumi</Text>
+    <ScrollView
+      contentContainerStyle={styles.contentContainer}
+      style={styles.container}
+    >
+      <View style={styles.banner}>
+        <Text style={styles.brandText}>Sumi</Text>
+      </View>
+      <View>
+        <Text style={styles.readerTag}>ReaderTag: xXxFR_Leavis_FrFrxXx</Text>
+        <View style={styles.readerScoreContainer}>
+          <Text style={styles.readerScore}>ReaderScore: 300</Text>
+          <Ionicons
+            style={styles.readerScoreTrophy}
+            name="trophy"
+            size={24}
+            color={"#393E41"}
+          ></Ionicons>
         </View>
-        <View>
-          <Text style={styles.readerTag}>ReaderTag: xXxFR_Leavis_FrFrxXx</Text>
-          <View style={styles.readerScoreContainer}>
-            <Text style={styles.readerScore}>ReaderScore: 300</Text>
-            <Ionicons
-              style={styles.readerScoreTrophy}
-              name="trophy"
-              size={24}
-              color={"#393E41"}
-            ></Ionicons>
+      </View>
+      <Text style={styles.completedAchievementsHeader}>
+        Completed Achievements
+      </Text>
+      <View style={styles.completedAchievementsContainer}>
+        <View style={styles.achievementsRow}>
+          <View style={styles.achievementIcon}></View>
+          <View style={styles.achievementDetails}>
+            <Text style={styles.achievementTitle}>Bookworm</Text>
+            <Text style={styles.achievementDescription}>
+              Read everyday for a week
+            </Text>
+            <View style={styles.achievementProgressBar}></View>
           </View>
-        </View>
-        <Text style={styles.completedAchievementsHeader}>
-          Completed Achievements
-        </Text>
-        <View style={styles.completedAchievementsContainer}>
-          <View style={styles.achievementsRow}>
-            <View style={styles.achievementIcon}></View>
-            <View style={styles.achievementDetails}>
-              <Text style={styles.achievementTitle}>Bookworm</Text>
-              <Text style={styles.achievementDescription}>
-                Read everyday for a week
-              </Text>
-              <View style={styles.achievementProgressBar}></View>
-            </View>
-            <View style={styles.scoreContainer}>
-              <Text style={styles.score}>+100</Text>
-            </View>
-          </View>
-          <View style={styles.achievementsRow}>
-            <View style={styles.achievementIcon}></View>
-            <View style={styles.achievementDetails}>
-              <Text style={styles.achievementTitle}>Magpie</Text>
-              <Text style={styles.achievementDescription}>Save 3 extracts</Text>
-              <View style={styles.achievementProgressBar}></View>
-            </View>
-            <View style={styles.scoreContainer}>
-              <Text style={styles.score}>+50</Text>
-            </View>
-          </View>
-          <View style={styles.achievementsRow}>
-            <View style={styles.achievementIcon}></View>
-            <View style={styles.achievementDetails}>
-              <Text style={styles.achievementTitle}>Man of Letters</Text>
-              <Text style={styles.achievementDescription}>
-                Post a comment that gets upvoted 10 times
-              </Text>
-              <View style={styles.achievementProgressBar}></View>
-            </View>
-            <View style={styles.scoreContainer}>
-              <Text style={styles.score}>+150</Text>
-            </View>
+          <View style={styles.scoreContainer}>
+            <Text style={styles.score}>+100</Text>
           </View>
         </View>
-        <Text style={styles.inProgressAchievementsHeader}>In Progress</Text>
-        <View style={styles.inProgressAchievementsContainer}>
-          <View style={styles.achievementsRow}>
-            <View style={styles.inProgressIcon}></View>
-            <View style={styles.achievementDetails}>
-              <Text style={styles.achievementTitle}>Scholar</Text>
-              <Text style={styles.achievementDescription}>
-                Read everyday for a month
-              </Text>
-              <View style={styles.inProgressBar}>
-                <View style={styles.progress1}></View>
-              </View>
-            </View>
-            <View style={styles.scoreContainer}></View>
+        <View style={styles.achievementsRow}>
+          <View style={styles.achievementIcon}></View>
+          <View style={styles.achievementDetails}>
+            <Text style={styles.achievementTitle}>Magpie</Text>
+            <Text style={styles.achievementDescription}>Save 3 extracts</Text>
+            <View style={styles.achievementProgressBar}></View>
           </View>
-          <View style={styles.achievementsRow}>
-            <View style={styles.inProgressIcon}></View>
-            <View style={styles.achievementDetails}>
-              <Text style={styles.achievementTitle}>
-                Critically Acclaimed... Criticism
-              </Text>
-              <Text style={styles.achievementDescription}>
-                Post a comment that earns 50 upvotes
-              </Text>
-              <View style={styles.inProgressBar}>
-                <View style={styles.progress2}></View>
-              </View>
-            </View>
-            <View style={styles.scoreContainer}></View>
+          <View style={styles.scoreContainer}>
+            <Text style={styles.score}>+50</Text>
           </View>
-          <View style={styles.achievementsRow}>
-            <View style={styles.inProgressIcon}></View>
-            <View style={styles.achievementDetails}>
-              <Text style={styles.achievementTitle}>Aficionado</Text>
-              <Text style={styles.achievementDescription}>
-                Revisit the same author ten times
-              </Text>
-              <View style={styles.inProgressBar}>
-                <View style={styles.progress3}></View>
-              </View>
-            </View>
-            <View style={styles.scoreContainer}></View>
+        </View>
+        <View style={styles.achievementsRow}>
+          <View style={styles.achievementIcon}></View>
+          <View style={styles.achievementDetails}>
+            <Text style={styles.achievementTitle}>Man of Letters</Text>
+            <Text style={styles.achievementDescription}>
+              Post a comment that gets upvoted 10 times
+            </Text>
+            <View style={styles.achievementProgressBar}></View>
+          </View>
+          <View style={styles.scoreContainer}>
+            <Text style={styles.score}>+150</Text>
           </View>
         </View>
       </View>
-    </View>
+      <Text style={styles.inProgressAchievementsHeader}>In Progress</Text>
+      <View style={styles.inProgressAchievementsContainer}>
+        <View style={styles.achievementsRow}>
+          <View style={styles.inProgressIcon}></View>
+          <View style={styles.achievementDetails}>
+            <Text style={styles.achievementTitle}>Scholar</Text>
+            <Text style={styles.achievementDescription}>
+              Read everyday for a month
+            </Text>
+            <View style={styles.inProgressBar}>
+              <View style={styles.progress1}></View>
+            </View>
+          </View>
+          <View style={styles.scoreContainer}></View>
+        </View>
+        <View style={styles.achievementsRow}>
+          <View style={styles.inProgressIcon}></View>
+          <View style={styles.achievementDetails}>
+            <Text style={styles.achievementTitle}>
+              Critically Acclaimed... Criticism
+            </Text>
+            <Text style={styles.achievementDescription}>
+              Post a comment that earns 50 upvotes
+            </Text>
+            <View style={styles.inProgressBar}>
+              <View style={styles.progress2}></View>
+            </View>
+          </View>
+          <View style={styles.scoreContainer}></View>
+        </View>
+        <View style={styles.achievementsRow}>
+          <View style={styles.inProgressIcon}></View>
+          <View style={styles.achievementDetails}>
+            <Text style={styles.achievementTitle}>Aficionado</Text>
+            <Text style={styles.achievementDescription}>
+              Revisit the same author ten times
+            </Text>
+            <View style={styles.inProgressBar}>
+              <View style={styles.progress3}></View>
+            </View>
+          </View>
+          <View style={styles.scoreContainer}></View>
+        </View>
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  contentContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100%",
+  },
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#393E41",
+    backgroundColor: "#F6F7EB",
     width: "100%",
   },
   paper: {
     backgroundColor: "#F6F7EB",
-    width: "90%",
+    width: "100%",
     padding: 16,
     height: "100%",
     alignItems: "center",
