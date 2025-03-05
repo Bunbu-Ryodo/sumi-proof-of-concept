@@ -1,4 +1,5 @@
 import { Text, View, StyleSheet } from "react-native";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default function Achievements() {
   return (
@@ -9,7 +10,15 @@ export default function Achievements() {
         </View>
         <View>
           <Text style={styles.readerTag}>ReaderTag: xXxFR_Leavis_FrFrxXx</Text>
-          <Text style={styles.readerScore}>ReaderScore: 300</Text>
+          <View style={styles.readerScoreContainer}>
+            <Text style={styles.readerScore}>ReaderScore: 300</Text>
+            <Ionicons
+              style={styles.readerScoreTrophy}
+              name="trophy"
+              size={24}
+              color={"#393E41"}
+            ></Ionicons>
+          </View>
         </View>
         <Text style={styles.completedAchievementsHeader}>
           Completed Achievements
@@ -58,45 +67,43 @@ export default function Achievements() {
           <View style={styles.achievementsRow}>
             <View style={styles.inProgressIcon}></View>
             <View style={styles.achievementDetails}>
-              <Text style={styles.achievementTitle}>Bookworm</Text>
+              <Text style={styles.achievementTitle}>Scholar</Text>
               <Text style={styles.achievementDescription}>
-                Read everyday for a week
+                Read everyday for a month
               </Text>
               <View style={styles.inProgressBar}>
                 <View style={styles.progress1}></View>
               </View>
             </View>
-            <View style={styles.scoreContainer}>
-              <Text style={styles.score}>+100</Text>
-            </View>
+            <View style={styles.scoreContainer}></View>
           </View>
           <View style={styles.achievementsRow}>
             <View style={styles.inProgressIcon}></View>
             <View style={styles.achievementDetails}>
-              <Text style={styles.achievementTitle}>Magpie</Text>
-              <Text style={styles.achievementDescription}>Save 3 extracts</Text>
+              <Text style={styles.achievementTitle}>
+                Critically Acclaimed... Criticism
+              </Text>
+              <Text style={styles.achievementDescription}>
+                Post a comment that earns 50 upvotes
+              </Text>
               <View style={styles.inProgressBar}>
                 <View style={styles.progress2}></View>
               </View>
             </View>
-            <View style={styles.scoreContainer}>
-              <Text style={styles.score}>+50</Text>
-            </View>
+            <View style={styles.scoreContainer}></View>
           </View>
           <View style={styles.achievementsRow}>
             <View style={styles.inProgressIcon}></View>
             <View style={styles.achievementDetails}>
-              <Text style={styles.achievementTitle}>Man of Letters</Text>
+              <Text style={styles.achievementTitle}>Aficionado</Text>
               <Text style={styles.achievementDescription}>
-                Post a comment that gets upvoted 10 times
+                Revisit the same author ten times
               </Text>
               <View style={styles.inProgressBar}>
                 <View style={styles.progress3}></View>
               </View>
             </View>
-            <View style={styles.scoreContainer}>
-              <Text style={styles.score}>+150</Text>
-            </View>
+            <View style={styles.scoreContainer}></View>
           </View>
         </View>
       </View>
@@ -199,6 +206,9 @@ const styles = StyleSheet.create({
     maxWidth: 200,
     fontSize: 14,
   },
+  readerScoreContainer: {
+    flexDirection: "row",
+  },
   achievementProgressBar: {
     marginTop: 8,
     alignItems: "center",
@@ -206,6 +216,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#FE7F2D",
     borderRadius: 40,
     height: 14,
+    borderWidth: 1,
+    borderColor: "#393E41",
   },
   inProgressBar: {
     marginTop: 8,
@@ -213,6 +225,7 @@ const styles = StyleSheet.create({
     borderColor: "#393E41",
     borderRadius: 40,
     height: 14,
+    width: 200,
   },
   progress1: {
     height: "100%",
@@ -243,5 +256,8 @@ const styles = StyleSheet.create({
   score: {
     fontSize: 24,
     fontFamily: "GoudyBookletter",
+  },
+  readerScoreTrophy: {
+    marginLeft: 8,
   },
 });
