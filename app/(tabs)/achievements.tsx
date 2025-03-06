@@ -60,6 +60,10 @@ export default function Achievements() {
           <Text>Read some book</Text>
         )}
       </View>
+      <View style={styles.shareContainer}>
+        <Ionicons name="share-social-outline" size={24} color="#8980F5" />
+        <Text style={styles.milestones}>Share Your Milestones</Text>
+      </View>
     </ScrollView>
   );
 }
@@ -215,5 +219,13 @@ const styles = StyleSheet.create({
   },
   readerScoreTrophy: {
     marginLeft: 8,
+  },
+  shareContainer: {
+    marginTop: 12,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  milestones: {
+    fontFamily: "QuicksandReg",
   },
 });

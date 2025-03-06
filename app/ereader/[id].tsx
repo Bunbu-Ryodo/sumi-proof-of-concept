@@ -55,7 +55,7 @@ export default function EReader() {
           editable
           multiline
           numberOfLines={8}
-          maxLength={40}
+          maxLength={490}
           style={styles.addCommentTextarea}
         />
         <TouchableOpacity style={styles.submitCommentButton} onPress={() => {}}>
