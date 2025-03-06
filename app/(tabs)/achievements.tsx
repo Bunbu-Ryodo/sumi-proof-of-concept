@@ -1,4 +1,10 @@
-import { Text, View, StyleSheet, ScrollView } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import {
   achievements,
@@ -61,7 +67,9 @@ export default function Achievements() {
         )}
       </View>
       <View style={styles.shareContainer}>
-        <Ionicons name="share-social-outline" size={24} color="#8980F5" />
+        <TouchableOpacity>
+          <Ionicons name="share-social-outline" size={24} color="#8980F5" />
+        </TouchableOpacity>
         <Text style={styles.milestones}>Share Your Milestones</Text>
       </View>
     </ScrollView>
