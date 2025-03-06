@@ -1,5 +1,11 @@
 import { Text, View, StyleSheet, ScrollView } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import {
+  achievements,
+  pendingAchievements,
+} from "../../dummy_data/achievements";
+import Achievement from "../../components/achievement";
+import PendingAchievement from "@/components/pendingAchievement";
 
 export default function Achievements() {
   return (
@@ -26,87 +32,33 @@ export default function Achievements() {
         Completed Achievements
       </Text>
       <View style={styles.completedAchievementsContainer}>
-        <View style={styles.achievementsRow}>
-          <View style={styles.achievementIcon}></View>
-          <View style={styles.achievementDetails}>
-            <Text style={styles.achievementTitle}>Bookworm</Text>
-            <Text style={styles.achievementDescription}>
-              Read everyday for a week
-            </Text>
-            <View style={styles.achievementProgressBar}></View>
-          </View>
-          <View style={styles.scoreContainer}>
-            <Text style={styles.score}>+100</Text>
-          </View>
-        </View>
-        <View style={styles.achievementsRow}>
-          <View style={styles.achievementIcon}></View>
-          <View style={styles.achievementDetails}>
-            <Text style={styles.achievementTitle}>Magpie</Text>
-            <Text style={styles.achievementDescription}>Save 3 extracts</Text>
-            <View style={styles.achievementProgressBar}></View>
-          </View>
-          <View style={styles.scoreContainer}>
-            <Text style={styles.score}>+50</Text>
-          </View>
-        </View>
-        <View style={styles.achievementsRow}>
-          <View style={styles.achievementIcon}></View>
-          <View style={styles.achievementDetails}>
-            <Text style={styles.achievementTitle}>Man of Letters</Text>
-            <Text style={styles.achievementDescription}>
-              Post a comment that gets upvoted 10 times
-            </Text>
-            <View style={styles.achievementProgressBar}></View>
-          </View>
-          <View style={styles.scoreContainer}>
-            <Text style={styles.score}>+150</Text>
-          </View>
-        </View>
+        {achievements ? (
+          achievements.map((row) => (
+            <Achievement
+              achievementName={row.achievementName}
+              achievementDesc={row.achievementDesc}
+              achievementScore={row.achievementScore}
+              icon={row.icon}
+            />
+          ))
+        ) : (
+          <Text>Read some book</Text>
+        )}
       </View>
       <Text style={styles.inProgressAchievementsHeader}>In Progress</Text>
       <View style={styles.inProgressAchievementsContainer}>
-        <View style={styles.achievementsRow}>
-          <View style={styles.inProgressIcon}></View>
-          <View style={styles.achievementDetails}>
-            <Text style={styles.achievementTitle}>Scholar</Text>
-            <Text style={styles.achievementDescription}>
-              Read everyday for a month
-            </Text>
-            <View style={styles.inProgressBar}>
-              <View style={styles.progress1}></View>
-            </View>
-          </View>
-          <View style={styles.scoreContainer}></View>
-        </View>
-        <View style={styles.achievementsRow}>
-          <View style={styles.inProgressIcon}></View>
-          <View style={styles.achievementDetails}>
-            <Text style={styles.achievementTitle}>
-              Critically Acclaimed... Criticism
-            </Text>
-            <Text style={styles.achievementDescription}>
-              Post a comment that earns 50 upvotes
-            </Text>
-            <View style={styles.inProgressBar}>
-              <View style={styles.progress2}></View>
-            </View>
-          </View>
-          <View style={styles.scoreContainer}></View>
-        </View>
-        <View style={styles.achievementsRow}>
-          <View style={styles.inProgressIcon}></View>
-          <View style={styles.achievementDetails}>
-            <Text style={styles.achievementTitle}>Aficionado</Text>
-            <Text style={styles.achievementDescription}>
-              Revisit the same author ten times
-            </Text>
-            <View style={styles.inProgressBar}>
-              <View style={styles.progress3}></View>
-            </View>
-          </View>
-          <View style={styles.scoreContainer}></View>
-        </View>
+        {pendingAchievements ? (
+          pendingAchievements.map((row) => (
+            <PendingAchievement
+              achievementName={row.achievementName}
+              achievementDesc={row.achievementDesc}
+              icon={row.icon}
+              achievementProgress={row.achievementProgress}
+            />
+          ))
+        ) : (
+          <Text>Read some book</Text>
+        )}
       </View>
     </ScrollView>
   );
