@@ -224,12 +224,7 @@ const styles = StyleSheet.create({
     borderColor: "#393E41",
   },
   inProgressBar: {
-    marginTop: 8,
-    borderWidth: 1,
-    borderColor: "#393E41",
-    borderRadius: 40,
-    height: 14,
-    width: 200,
+    x,
   },
   progress1: {
     height: "100%",

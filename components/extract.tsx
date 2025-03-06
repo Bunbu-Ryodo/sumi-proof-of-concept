@@ -8,12 +8,9 @@ type ExtractProps = {
   author: string;
   chapter: string;
   year: string;
-  frequency: string;
   text: string;
   portrait: any;
   thumbnail: any;
-  fullExtract: string;
-  affiliateLink: string;
 };
 
 export default function Extract({
@@ -22,12 +19,9 @@ export default function Extract({
   author,
   chapter,
   year,
-  frequency,
   text,
   portrait,
   thumbnail,
-  fullExtract,
-  affiliateLink,
 }: ExtractProps) {
   return (
     <View style={styles.extract}>
