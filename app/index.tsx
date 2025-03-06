@@ -14,8 +14,10 @@ export default function Index() {
       <View style={styles.logoBook}>
         <View style={styles.logoTitle}></View>
       </View>
-      <Text style={styles.header}>Sumi</Text>
-      <Text style={styles.tagline}>Just One More Chapter</Text>
+      <View style={styles.titleTaglineContainer}>
+        <Text style={styles.header}>Sumi</Text>
+        <Text style={styles.tagline}>Just One More Chapter</Text>
+      </View>
       <View style={styles.form}>
         <Text style={styles.formLabel}>Email</Text>
         <TextInput style={styles.formInput}></TextInput>
@@ -43,6 +45,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#393E41",
     width: "100%",
+  },
+  titleTaglineContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 24,
   },
   logoBook: {
     width: 50,
@@ -72,13 +79,13 @@ const styles = StyleSheet.create({
     maxWidth: 368,
   },
   formLabel: {
-    marginTop: 8,
     fontSize: 16,
     fontFamily: "QuicksandReg",
     color: "#F6F7EB",
   },
   formInput: {
-    marginTop: 12,
+    marginTop: 8,
+    marginBottom: 8,
     fontSize: 16,
     fontFamily: "QuicksandReg",
     color: "#F6F7EB",
@@ -94,7 +101,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   buttonPrimary: {
-    marginTop: 14,
+    marginTop: 8,
     padding: 16,
     backgroundColor: "#F6F7EB",
     borderRadius: 8,
@@ -111,8 +118,8 @@ const styles = StyleSheet.create({
     fontFamily: "QuicksandReg",
   },
   buttonSecondary: {
-    marginTop: 12,
-    padding: 12,
+    marginTop: 16,
+    padding: 16,
     backgroundColor: "transparent",
     borderWidth: 1,
     borderColor: "#F6F7EB",
