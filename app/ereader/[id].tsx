@@ -35,27 +35,35 @@ export default function EReader() {
           <Text>Your book is in another castle</Text>
         )}
         <View style={styles.engagementButtons}>
-          <Ionicons name="heart-outline" size={24} color="#D64045" />
+          <TouchableOpacity>
+            <Ionicons name="heart-outline" size={24} color="#D64045" />
+          </TouchableOpacity>
           <View style={styles.subscribeContainer}>
-            <Ionicons name="bookmark-outline" size={24} color="#FE7F2D" />
+            <TouchableOpacity>
+              <Ionicons name="bookmark-outline" size={24} color="#FE7F2D" />
+            </TouchableOpacity>
             <Text style={styles.bookmarkText}>
               Subscribe: new chapter next week
             </Text>
           </View>
           <View style={styles.shoppingContainer}>
-            <Ionicons name="cart-outline" size={24} color="#77966D" />
+            <TouchableOpacity>
+              <Ionicons name="cart-outline" size={24} color="#77966D" />
+            </TouchableOpacity>
             <Text style={styles.shoppingText}>
               Buy a high quality edition of the full text
             </Text>
           </View>
-          <Ionicons name="share-social-outline" size={24} color="#8980F5" />
+          <TouchableOpacity>
+            <Ionicons name="share-social-outline" size={24} color="#8980F5" />
+          </TouchableOpacity>
         </View>
         <Text style={styles.discuss}>Discuss.</Text>
         <TextInput
           editable
           multiline
           numberOfLines={8}
-          maxLength={40}
+          maxLength={490}
           style={styles.addCommentTextarea}
         />
         <TouchableOpacity style={styles.submitCommentButton} onPress={() => {}}>

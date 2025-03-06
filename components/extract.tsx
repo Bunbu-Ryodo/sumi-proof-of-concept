@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, Image } from "react-native";
+import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { Link } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
@@ -82,10 +82,18 @@ export default function Extract({
         </Link>
       </View>
       <View style={styles.engagementButtons}>
-        <Ionicons name="heart-outline" size={24} color="#D64045" />
-        <Ionicons name="bookmark-outline" size={24} color="#FE7F2D" />
-        <Ionicons name="chatbubble-outline" size={24} color="#77966D" />
-        <Ionicons name="share-social-outline" size={24} color="#8980F5" />
+        <TouchableOpacity>
+          <Ionicons name="heart-outline" size={24} color="#D64045" />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Ionicons name="bookmark-outline" size={24} color="#FE7F2D" />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Ionicons name="chatbubble-outline" size={24} color="#77966D" />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Ionicons name="share-social-outline" size={24} color="#8980F5" />
+        </TouchableOpacity>
       </View>
     </View>
   );

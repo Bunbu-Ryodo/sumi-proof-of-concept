@@ -1,4 +1,10 @@
-import { Text, View, StyleSheet, ScrollView } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import {
   achievements,
@@ -59,6 +65,12 @@ export default function Achievements() {
         ) : (
           <Text>Read some book</Text>
         )}
+      </View>
+      <View style={styles.shareContainer}>
+        <TouchableOpacity>
+          <Ionicons name="share-social-outline" size={24} color="#8980F5" />
+        </TouchableOpacity>
+        <Text style={styles.milestones}>Share Your Milestones</Text>
       </View>
     </ScrollView>
   );
@@ -215,5 +227,13 @@ const styles = StyleSheet.create({
   },
   readerScoreTrophy: {
     marginLeft: 8,
+  },
+  shareContainer: {
+    marginTop: 12,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  milestones: {
+    fontFamily: "QuicksandReg",
   },
 });
