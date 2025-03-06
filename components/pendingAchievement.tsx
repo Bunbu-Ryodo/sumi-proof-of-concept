@@ -1,21 +1,24 @@
 import { View, Text, StyleSheet } from "react-native";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 type PendingAchievement = {
   achievementName: string;
   achievementDesc: string;
-  achievementScore: number;
   achievementProgress: number;
+  icon: string;
 };
 
 export default function PendingAchievement({
   achievementName,
   achievementDesc,
-  achievementScore,
   achievementProgress,
+  icon,
 }: PendingAchievement) {
   return (
     <View style={styles.achievementsRow}>
-      <View style={styles.achievementIcon}></View>
+      <View style={styles.achievementIcon}>
+        <Ionicons name={icon} size={24} color={"#393E41"}></Ionicons>
+      </View>
       <View style={styles.achievementDetails}>
         <Text style={styles.achievementTitle}>{achievementName}</Text>
         <Text style={styles.achievementDescription}>{achievementDesc}</Text>
@@ -27,9 +30,6 @@ export default function PendingAchievement({
             ]}
           ></View>
         </View>
-      </View>
-      <View style={styles.scoreContainer}>
-        <Text style={styles.score}>{achievementScore}</Text>
       </View>
     </View>
   );
@@ -44,8 +44,12 @@ const styles = StyleSheet.create({
     height: 48,
     width: 48,
     borderRadius: 8,
-    backgroundColor: "#393E41",
+    backgroundColor: "transparent",
+    borderWidth: 1,
+    borderColor: "#393E41",
     marginRight: 16,
+    alignItems: "center",
+    justifyContent: "center",
   },
   inProgressIcon: {
     height: 48,
@@ -77,14 +81,9 @@ const styles = StyleSheet.create({
     width: 200,
   },
   achievementProgressBar: {
-    marginTop: 8,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#FE7F2D",
+    backgroundColor: "#8980F5",
     borderRadius: 40,
-    height: 14,
-    borderWidth: 1,
-    borderColor: "#393E41",
+    height: 12,
   },
   achievementDetails: {
     minWidth: 200,

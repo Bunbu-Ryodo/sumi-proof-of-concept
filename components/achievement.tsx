@@ -1,26 +1,31 @@
 import { View, Text, StyleSheet } from "react-native";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 type Achievement = {
   achievementName: string;
   achievementDesc: string;
   achievementScore: number;
+  icon: string;
 };
 
 export default function Achievement({
   achievementName,
   achievementDesc,
   achievementScore,
+  icon,
 }: Achievement) {
   return (
     <View style={styles.achievementsRow}>
-      <View style={styles.achievementIcon}></View>
+      <View style={styles.achievementIcon}>
+        <Ionicons name={icon} size={24} color={"#F6F7EB"}></Ionicons>
+      </View>
       <View style={styles.achievementDetails}>
         <Text style={styles.achievementTitle}>{achievementName}</Text>
         <Text style={styles.achievementDescription}>{achievementDesc}</Text>
         <View style={styles.achievementProgressBar}></View>
       </View>
       <View style={styles.scoreContainer}>
-        <Text style={styles.score}>{achievementScore}</Text>
+        <Text style={styles.score}>+{achievementScore}</Text>
       </View>
     </View>
   );
@@ -37,6 +42,8 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     backgroundColor: "#393E41",
     marginRight: 16,
+    alignItems: "center",
+    justifyContent: "center",
   },
   inProgressIcon: {
     height: 48,
