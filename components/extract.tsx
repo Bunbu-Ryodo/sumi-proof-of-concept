@@ -51,7 +51,7 @@ export default function Extract({
             }}
             asChild
           >
-            <Text style={styles.readFullText}>Read full installment</Text>
+            <Text style={styles.readFullText}>Read full instalment</Text>
           </Link>
         </View>
       </View>

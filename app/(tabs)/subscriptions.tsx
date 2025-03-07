@@ -12,7 +12,7 @@ export default function Subscriptions() {
       <View>
         <View style={styles.unreadContainer}>
           <View style={styles.subscriptionsHeader}>
-            <Text style={styles.newInstallmentsHeader}>New Installments</Text>
+            <Text style={styles.newInstallmentsHeader}>New Instalments</Text>
             <View style={styles.headerIconContainer}>
               <Ionicons
                 name="mail-unread"
@@ -25,7 +25,7 @@ export default function Subscriptions() {
         </View>
         <View style={styles.readContainer}>
           <View style={styles.subscriptionsHeader}>
-            <Text style={styles.newInstallmentsHeader}>Read Installments</Text>
+            <Text style={styles.newInstallmentsHeader}>Read Instalments</Text>
             <View style={styles.headerIconContainer}>
               <Ionicons name="mail-open" size={24} color={"#393E41"}></Ionicons>
             </View>
