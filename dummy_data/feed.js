@@ -15,7 +15,7 @@ export default feedData = [
         author: "Henry James",
         chapter: "Chapter 1",
         year: "(1904)",
-        portrait: require("../assets/images/james.jpg"),
+        portrait: require("../assets/images/james1.png"),
         thumbnail: require("../assets/images/goldenbowl.png"), 
         text: "The Prince had always liked his London, when it had come to him; he was one of the modern Romans who find by the Thames a more convincing image of the truth of the ancient state than any they have left by the Tiber. Brought up on the legend of the City to which the world paid tribute, he recognised in the present London much more than in contemporary Rome the real dimensions of such a case. If it was a question of an Imperium, he said to himself, and if one wished, as a Roman, to recover a little the sense of that, the place to do so was on London Bridge, or even, on a fine afternoon in May, at Hyde Park... "
     },

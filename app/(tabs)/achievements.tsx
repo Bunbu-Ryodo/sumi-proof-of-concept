@@ -80,11 +80,11 @@ const styles = StyleSheet.create({
   contentContainer: {
     alignItems: "center",
     justifyContent: "center",
-    height: "100%",
   },
   container: {
     flex: 1,
     backgroundColor: "#F6F7EB",
+    height: "100%",
     width: "100%",
   },
   paper: {
@@ -116,13 +116,13 @@ const styles = StyleSheet.create({
     marginTop: 16,
     textDecorationLine: "underline",
     fontFamily: "QuicksandReg",
-    fontSize: 14,
+    fontSize: 16,
   },
   inProgressAchievementsHeader: {
     marginTop: 16,
     textDecorationLine: "underline",
     fontFamily: "QuicksandReg",
-    fontSize: 14,
+    fontSize: 16,
   },
   completedAchievementsContainer: {
     marginTop: 12,
@@ -132,6 +132,7 @@ const styles = StyleSheet.create({
     borderColor: "#393E41",
     borderRadius: 8,
     padding: 16,
+    justifyContent: "space-evenly",
   },
   inProgressAchievementsContainer: {
     marginTop: 12,

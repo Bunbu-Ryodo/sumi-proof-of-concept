@@ -30,7 +30,7 @@ export default function FeedScreen() {
 const styles = StyleSheet.create({
   contentContainer: {
     alignItems: "center", // Center the Extract components horizontally
-    paddingVertical: 16, // Add some vertical padding if needed
+    paddingVertical: 24, // Add some vertical padding if needed
   },
   container: {
     backgroundColor: "#393E41",

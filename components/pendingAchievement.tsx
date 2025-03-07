@@ -38,7 +38,7 @@ export default function PendingAchievement({
 const styles = StyleSheet.create({
   achievementsRow: {
     flexDirection: "row",
-    marginBottom: 16,
+    padding: 8,
   },
   achievementIcon: {
     height: 48,

@@ -112,10 +112,12 @@ const styles = StyleSheet.create({
   primaryButtonText: {
     color: "#393E41",
     fontFamily: "QuicksandReg",
+    fontSize: 16,
   },
   secondaryButtonText: {
     color: "#F6F7EB",
     fontFamily: "QuicksandReg",
+    fontSize: 16,
   },
   buttonSecondary: {
     marginTop: 16,

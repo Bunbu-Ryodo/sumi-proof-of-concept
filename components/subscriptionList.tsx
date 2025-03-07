@@ -15,8 +15,8 @@ export default function SubscriptionsList({ data }: subscriptionListProps) {
     <View style={styles.subscriptionSection}>
       {data ? (
         data.map((item) => (
-          <TouchableOpacity>
-            <Image style={styles.imageIcons} key={item.id} source={item.icon} />
+          <TouchableOpacity key={item.id}>
+            <Image style={styles.imageIcons} source={item.icon} />
           </TouchableOpacity>
         ))
       ) : (

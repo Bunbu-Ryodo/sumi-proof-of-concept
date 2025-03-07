@@ -21,18 +21,6 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="index"
-        options={{
-          href: null,
-        }}
-      ></Tabs.Screen>
-      <Tabs.Screen
-        name="register"
-        options={{
-          href: null,
-        }}
-      ></Tabs.Screen>
-      <Tabs.Screen
         name="feed"
         options={{
           title: "Feed",

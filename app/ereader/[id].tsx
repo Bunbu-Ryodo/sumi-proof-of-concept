@@ -8,12 +8,12 @@ import {
 } from "react-native";
 import ereaderData from "../../dummy_data/ereader.js";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { Link } from "expo-router";
 
 import { useLocalSearchParams } from "expo-router";
 
 export default function EReader() {
   const { id } = useLocalSearchParams();
-  console.log(id);
   const textObject = ereaderData.find(
     (text) => text.id === parseInt(Array.isArray(id) ? id[0] : id)
   );
@@ -58,6 +58,14 @@ export default function EReader() {
             <Ionicons name="share-social-outline" size={24} color="#8980F5" />
           </TouchableOpacity>
         </View>
+        <Link style={styles.returnAnchor} href="/feed" asChild>
+          <View>
+            <TouchableOpacity style={styles.returnContainer}>
+              <Ionicons name="arrow-back" size={24} color="#8980F5" />
+            </TouchableOpacity>
+            <Text style={styles.shoppingText}>Return to Feed</Text>
+          </View>
+        </Link>
         <Text style={styles.discuss}>Discuss.</Text>
         <TextInput
           editable
@@ -90,7 +98,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: "GoudyBookletter",
     fontSize: 24,
-    marginBottom: 16,
+    marginBottom: 8,
   },
   chapter: {
     fontFamily: "Merriweather",
@@ -111,7 +119,7 @@ const styles = StyleSheet.create({
     borderStyle: "dotted",
   },
   engagementButtons: {
-    marginTop: 16,
+    marginTop: 12,
     width: "100%",
     flexDirection: "row",
     justifyContent: "space-around",
@@ -136,6 +144,7 @@ const styles = StyleSheet.create({
   discuss: {
     fontFamily: "GoudyBookletter",
     fontSize: 36,
+    marginTop: 8,
   },
   addCommentTextarea: {
     borderWidth: 1,
@@ -143,9 +152,10 @@ const styles = StyleSheet.create({
     padding: 8,
     borderRadius: 8,
     fontFamily: "QuicksandReg",
+    marginTop: 8,
   },
   submitCommentButton: {
-    marginTop: 12,
+    marginTop: 8,
     paddingVertical: 16,
     backgroundColor: "#393E41",
     borderRadius: 8, // Same borderRadius as form inputs
@@ -157,4 +167,8 @@ const styles = StyleSheet.create({
     fontFamily: "QuicksandReg",
     fontSize: 16,
   },
+  returnAnchor: {
+    alignItems: "center",
+  },
+  returnContainer: {},
 });

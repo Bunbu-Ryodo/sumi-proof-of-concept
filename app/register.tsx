@@ -99,11 +99,6 @@ const styles = StyleSheet.create({
     padding: 12,
     backgroundColor: "transparent",
   },
-  signIn: {
-    marginTop: 14,
-    backgroundColor: "#F6F7EB",
-    borderRadius: 8,
-  },
   buttonContainer: {
     width: "100%",
     alignItems: "center",
