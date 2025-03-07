@@ -24,9 +24,6 @@ export default function Achievement({
         <Text style={styles.achievementDescription}>{achievementDesc}</Text>
         <View style={styles.achievementProgressBar}></View>
       </View>
-      <View style={styles.scoreContainer}>
-        <Text style={styles.score}>+{achievementScore}</Text>
-      </View>
     </View>
   );
 }
@@ -34,7 +31,7 @@ export default function Achievement({
 const styles = StyleSheet.create({
   achievementsRow: {
     flexDirection: "row",
-    marginBottom: 16,
+    padding: 8,
   },
   achievementIcon: {
     height: 48,
@@ -82,7 +79,7 @@ const styles = StyleSheet.create({
   scoreContainer: {
     alignItems: "center",
     justifyContent: "center",
-    padding: 16,
+    padding: 8,
   },
   score: {
     fontSize: 24,

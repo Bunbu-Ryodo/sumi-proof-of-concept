@@ -37,7 +37,7 @@ export default function Extract({
         >
           <Image source={portrait} style={styles.portrait}></Image>
         </Link>
-        <View>
+        <View style={styles.headerContainer}>
           <Text style={styles.headerTextTitle}>{title}</Text>
           <Text style={styles.headerText}>{chapter}</Text>
           <Text style={styles.headerText}>{author}</Text>
@@ -127,7 +127,9 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   portrait: {
-    borderRadius: 60,
+    borderRadius: 8,
+    height: 100,
+    width: 100,
   },
   text: {
     fontFamily: "Merriweather",
@@ -139,7 +141,11 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
     borderBottomColor: "#393E41",
     borderBottomWidth: 1,
+    borderStyle: "dotted",
     width: "100%",
+  },
+  headerContainer: {
+    padding: 8,
   },
   headerText: {
     marginLeft: 12,

@@ -14,8 +14,10 @@ export default function Register() {
       <View style={styles.logoBook}>
         <View style={styles.logoTitle}></View>
       </View>
-      <Text style={styles.header}>Sumi</Text>
-      <Text style={styles.tagline}>Just One More Chapter</Text>
+      <View style={styles.titleTaglineContainer}>
+        <Text style={styles.header}>Sumi</Text>
+        <Text style={styles.tagline}>Just One More Chapter</Text>
+      </View>
       <View style={styles.form}>
         <Text style={styles.formLabel}>ReaderTag</Text>
         <TextInput style={styles.formInput}></TextInput>
@@ -25,12 +27,12 @@ export default function Register() {
         <TextInput secureTextEntry={true} style={styles.formInput}></TextInput>
         <Text style={styles.formLabel}>Confirm Password</Text>
         <TextInput secureTextEntry={true} style={styles.formInput}></TextInput>
-        <Link style={styles.buttonContainer} href="/feed" asChild>
+        <Link href="/feed" asChild>
           <TouchableOpacity style={styles.buttonPrimary} onPress={() => {}}>
             <Text style={styles.primaryButtonText}>Register</Text>
           </TouchableOpacity>
         </Link>
-        <Link style={styles.buttonContainer} href="/" asChild>
+        <Link href="/" asChild>
           <TouchableOpacity style={styles.buttonSecondary} onPress={() => {}}>
             <Text style={styles.secondaryButtonText}>Back to Sign In</Text>
           </TouchableOpacity>
@@ -61,6 +63,11 @@ const styles = StyleSheet.create({
     borderRadius: 2,
     backgroundColor: "#393E41",
   },
+  titleTaglineContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 24,
+  },
   header: {
     fontSize: 36,
     fontFamily: "GoudyBookletter",
@@ -73,15 +80,16 @@ const styles = StyleSheet.create({
   },
   form: {
     width: "90%",
+    maxWidth: 368,
   },
   formLabel: {
-    marginTop: 8,
     fontSize: 16,
     fontFamily: "QuicksandReg",
     color: "#F6F7EB",
   },
   formInput: {
-    marginTop: 12,
+    marginTop: 8,
+    marginBottom: 8,
     fontSize: 16,
     fontFamily: "QuicksandReg",
     color: "#F6F7EB",
@@ -91,22 +99,19 @@ const styles = StyleSheet.create({
     padding: 12,
     backgroundColor: "transparent",
   },
-  signIn: {
-    marginTop: 14,
-    backgroundColor: "#F6F7EB",
-    borderRadius: 8,
-  },
   buttonContainer: {
     width: "100%",
     alignItems: "center",
     marginTop: 12,
   },
   buttonPrimary: {
-    paddingVertical: 16,
+    marginTop: 8,
+    padding: 16,
     backgroundColor: "#F6F7EB",
-    borderRadius: 8, // Same borderRadius as form inputs
+    borderRadius: 8,
     alignItems: "center",
-    width: "100%", // Take 100% of the container width
+    fontFamily: "QuicksandReg",
+    width: "100%",
   },
   primaryButtonText: {
     color: "#393E41",
@@ -114,13 +119,16 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   buttonSecondary: {
-    paddingVertical: 16,
+    marginTop: 16,
+    padding: 16,
     backgroundColor: "transparent",
     borderWidth: 1,
     borderColor: "#F6F7EB",
-    borderRadius: 8, // Same borderRadius as form inputs
+    color: "#F6F7EB",
+    borderRadius: 8,
     alignItems: "center",
-    width: "100%", // Take 100% of the container width
+    fontFamily: "QuicksandReg",
+    width: "100%",
   },
   secondaryButtonText: {
     color: "#F6F7EB",

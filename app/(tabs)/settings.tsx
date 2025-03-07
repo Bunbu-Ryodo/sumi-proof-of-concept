@@ -26,6 +26,11 @@ export default function Settings() {
             <Text style={styles.primaryButtonText}>Save</Text>
           </TouchableOpacity>
         </Link>
+        <Link style={styles.buttonContainer} href="/" asChild>
+          <TouchableOpacity style={styles.buttonLogout} onPress={() => {}}>
+            <Text style={styles.primaryButtonText}>Logout</Text>
+          </TouchableOpacity>
+        </Link>
       </View>
     </View>
   );
@@ -59,11 +64,6 @@ const styles = StyleSheet.create({
     borderRadius: 2,
     backgroundColor: "#393E41",
   },
-  header: {
-    fontSize: 36,
-    fontFamily: "GoudyBookletter",
-    color: "#F6F7EB",
-  },
   tagline: {
     fontSize: 18,
     fontFamily: "QuicksandReg",
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     color: "#F6F7EB",
   },
   formInput: {
-    marginTop: 12,
+    marginTop: 8,
     fontSize: 16,
     fontFamily: "QuicksandReg",
     color: "#F6F7EB",
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     width: "100%",
     alignItems: "center",
-    marginTop: 12,
+    marginTop: 16,
   },
   buttonPrimary: {
     paddingVertical: 16,
@@ -106,6 +106,14 @@ const styles = StyleSheet.create({
     borderRadius: 8, // Same borderRadius as form inputs
     alignItems: "center",
     width: "100%", // Take 100% of the container width
+  },
+  buttonLogout: {
+    paddingVertical: 16,
+    color: "#F6F7EB",
+    borderRadius: 8, // Same borderRadius as form inputs
+    alignItems: "center",
+    width: "100%", // Take 100% of the container width
+    backgroundColor: "#8980F5",
   },
   primaryButtonText: {
     color: "#393E41",
